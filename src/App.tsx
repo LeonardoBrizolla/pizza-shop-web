@@ -4,6 +4,13 @@ import { RouterProvider } from "react-router-dom";
 
 import { router } from "@/routes";
 
+import { HelmetProvider, Helmet } from "react-helmet-async";
+
 export function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  return (
+    <HelmetProvider>
+      <Helmet titleTemplate="%s | pizza.shop" />
+      <RouterProvider router={router}></RouterProvider>
+    </HelmetProvider>
+  );
 }
